@@ -46,8 +46,8 @@ To run the executable file:
 
   - **Billie Thompson** - *Provided README Template* -
     [PurpleBooth](https://github.com/PurpleBooth)
-    - **Emma A. Jimenez S.** - *Authors Code* -
-    [PurpleBooth](https://github.com/EmmaAli1604)
+  - **Emma A. Jimenez S.** - *Code Author* -
+    [EmmaAli1604](https://github.com/EmmaAli1604)
 
 ## License
 
