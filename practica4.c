@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 
-int pasarInt(float n){
+int pasarDecimal(int n){
     int binary = n, decimal = 0, base = 1, remainder, temp;
     for (temp = binary; temp > 0; temp = temp / 10) {
         remainder = temp % 2;
@@ -13,52 +13,66 @@ int pasarInt(float n){
     return decimal;
 }
 
-float pasarBinario(int n){
-    int rem, bin=0, i=1;
-	while(n!=0)
-	{
-		rem= n%2;
-		bin += (rem*i);
-		n /= 2;
-		i *= 10;
-	}
-    return bin;
-}
-
-float AND(float opA, float opB){
-    if(opA && opB){
-        return ;
+void pasarBinario(size_t const size, void const * const ptr){
+    unsigned char *b = (unsigned char*) ptr; 
+    unsigned char byte;
+    for(int i = size -1; i >= 0; i--){
+        for(int j = 7; j>=0; j--){
+            byte=(b[i] >> j) & 1;
+            printf("%u",byte);
+        }
     }
-    return;
+    printf("\n");
 }
 
-float OR(float opA, float opB){
-    if(opA || opB){
-        return ;
+void AND(float opA, float opB){
+    int f = 0;
+    int t = 4294967295;
+    if((opA && opB) == 1){
+        pasarBinario(sizeof(t),&t);
+    }else{
+        pasarBinario(sizeof(f),&f);
     }
-    return;
 }
 
-float adicion(float opA, float opB){
-    return pasarBinario(opA+opB);
+void OR(float opA, float opB){
+    int f = 0;
+    int t = 4294967295;
+    if((opA || opB) == 1){
+        pasarBinario(sizeof(t),&t) ;
+    }else{
+        pasarBinario(sizeof(f),&f);
+    }
 }
 
-float sustraccion(float opA, float opB){
-    return pasarBinario(opA-opB);
+void adicion(float opA, float opB){
+    int result = opA + opB;
+    pasarBinario(sizeof(result),&result);
 }
 
-float igualdad(float opA, float opB){
+void sustraccion(float opA, float opB){
+    int result = opA - opB;
+    pasarBinario(sizeof(result),&result);
+}
+
+void igualdad(float opA, float opB){
+    int f = 0;
+    int t = 4294967295;
     if(opA == opB){
-        return ;
+        pasarBinario(sizeof(t),&t);
+    }else{
+        pasarBinario(sizeof(f),&f);
     }
-    return ;
 }
 
-float menor_que(float opA, float opB){
+void menor_que(float opA, float opB){
+    int f = 0;
+    int t = 4294967295;
     if(opA < opB){
-        return ;
+        pasarBinario(sizeof(t),&t);
+    }else{
+        pasarBinario(sizeof(f),&f);
     }
-    return ;
 }
 
 int main(int argc, char const *argv[])
@@ -69,30 +83,35 @@ int main(int argc, char const *argv[])
         datos[i]=atoi(argv[i+1]);
     }
 
-    int op=datos[0];
-    int opA= datos[1];
-    int opB= datos [2];
+    int op = datos[0];
+    int opA= pasarDecimal(datos[1]);
+    int opB= pasarDecimal(datos[2]);
+
+    printf("main:%d\n",opA&&opB);
 
     switch (op)
     {
     case 0:
-        printf("%f\n",AND(opA,opB));
+        AND(opA,opB);
         break;
     case 1:
-        printf("%f\n",OR(opA,opB));
+        OR(opA,opB);
         break;
     case 10:
-        printf("%f\n",adicion(opA,opB));
+        adicion(opA,opB);
         break;
     case 11:
-        printf("%f\n",sustraccion(opA,opB));
+        sustraccion(opA,opB);
         break;
     case 100:
-        printf("%f\n",igualdad(opA,opB));
+        igualdad(opA,opB);
         break;
     case 101:
-        printf("%f\n",menor_que(opA,opB));
+        menor_que(opA,opB);
         break;
+    default:
+        printf("No se encuentra la opción\n");
     }
+
     return 0;
 }
