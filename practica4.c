@@ -3,21 +3,24 @@
 #include <string.h>
 #include <math.h>
 
-int pasarDecimal(int n){
-    int binary = n, decimal = 0, base = 1, remainder, temp;
-    for (temp = binary; temp > 0; temp = temp / 10) {
-        remainder = temp % 2;
-        decimal = decimal + remainder * base;
-        base = base * 2;
+int pasarDecimal(const char *binary){
+    int decimal = 0;
+    int length = strlen(binary);
+    int base = 1;
+    for (int i = length - 1; i >= 0; i--) {
+        if (binary[i] == '1') {
+            decimal += base;
+        }
+        base *= 2;
     }
     return decimal;
 }
 
 void pasarBinario(size_t const size, void const * const ptr){
-    unsigned char *b = (unsigned char*) ptr; 
+    unsigned char *b = (unsigned char*) ptr;
     unsigned char byte;
-    for(int i = size -1; i >= 0; i--){
-        for(int j = 7; j>=0; j--){
+    for(int i = size - 1; i >= 0; i--){
+        for(int j = 7; j>= 0; j--){
             byte=(b[i] >> j) & 1;
             printf("%u",byte);
         }
@@ -84,10 +87,13 @@ int main(int argc, char const *argv[])
     }
 
     int op = datos[0];
-    int opA= pasarDecimal(datos[1]);
-    int opB= pasarDecimal(datos[2]);
+    int opA= pasarDecimal(argv[2]);
+    int opB= pasarDecimal(argv[3]);
 
-    printf("main:%d\n",opA&&opB);
+    printf("datos: %d\n",datos[2]);
+    printf("%d\n",opA);
+    printf("%d\n",opB);
+    printf("%d\n",opA+opB);
 
     switch (op)
     {
