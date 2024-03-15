@@ -117,40 +117,18 @@
     <wire from="(680,450)" to="(690,450)"/>
     <wire from="(710,540)" to="(720,540)"/>
     <wire from="(620,420)" to="(620,600)"/>
-    <comp lib="6" loc="(189,521)" name="Text">
-      <a name="text" val="B"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(790,550)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="6" loc="(212,312)" name="Text">
-      <a name="text" val="A"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(680,450)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(200,170)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="6" loc="(186,145)" name="Text">
-      <a name="text" val="C_in"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
     <comp lib="0" loc="(820,410)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
     </comp>
-    <comp loc="(530,330)" name="Sumador 8 bits"/>
-    <comp lib="2" loc="(750,550)" name="Multiplexer">
-      <a name="enable" val="false"/>
-    </comp>
     <comp lib="0" loc="(320,310)" name="Pin">
       <a name="width" val="8"/>
       <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(186,145)" name="Text">
+      <a name="text" val="C_in"/>
+      <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(290,520)" name="Pin">
       <a name="width" val="8"/>
@@ -160,6 +138,28 @@
     <comp lib="2" loc="(700,410)" name="Multiplexer">
       <a name="width" val="8"/>
       <a name="enable" val="false"/>
+    </comp>
+    <comp lib="0" loc="(200,170)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="2" loc="(750,550)" name="Multiplexer">
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="6" loc="(212,312)" name="Text">
+      <a name="text" val="A"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp loc="(530,330)" name="Sumador 8 bits"/>
+    <comp lib="0" loc="(790,550)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="6" loc="(189,521)" name="Text">
+      <a name="text" val="B"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(680,450)" name="Pin">
+      <a name="tristate" val="false"/>
     </comp>
   </circuit>
   <circuit name="Sumador 1 bit">
@@ -212,14 +212,29 @@
       <a name="text" val="A"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(110,90)" name="Pin">
-      <a name="tristate" val="false"/>
+    <comp lib="6" loc="(58,329)" name="Text">
+      <a name="text" val="B"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(450,290)" name="AND Gate">
+      <a name="inputs" val="2"/>
     </comp>
     <comp lib="1" loc="(310,190)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(390,380)" name="AND Gate">
-      <a name="inputs" val="2"/>
+    <comp lib="0" loc="(110,330)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(110,90)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(73,64)" name="Text">
+      <a name="text" val="C_in"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(586,177)" name="Text">
+      <a name="text" val="A+B"/>
+      <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(110,150)" name="Pin">
       <a name="tristate" val="false"/>
@@ -232,33 +247,18 @@
       <a name="text" val="carry(C_out)"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp lib="1" loc="(520,360)" name="OR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
     <comp lib="1" loc="(470,160)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="6" loc="(73,64)" name="Text">
-      <a name="text" val="C_in"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="6" loc="(58,329)" name="Text">
-      <a name="text" val="B"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(450,290)" name="AND Gate">
+    <comp lib="1" loc="(390,380)" name="AND Gate">
       <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="6" loc="(586,177)" name="Text">
-      <a name="text" val="A+B"/>
-      <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(550,360)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(110,330)" name="Pin">
-      <a name="tristate" val="false"/>
+    <comp lib="1" loc="(520,360)" name="OR Gate">
+      <a name="inputs" val="2"/>
     </comp>
   </circuit>
   <circuit name="Sumador 8 bits">
@@ -367,23 +367,6 @@
       <a name="text" val="C_in"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp loc="(420,310)" name="Sumador 1 bit"/>
-    <comp loc="(370,280)" name="Sumador 1 bit"/>
-    <comp loc="(630,430)" name="Sumador 1 bit"/>
-    <comp lib="0" loc="(170,580)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(220,380)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp loc="(680,490)" name="Sumador 1 bit"/>
-    <comp lib="0" loc="(680,190)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="right"/>
-    </comp>
     <comp lib="0" loc="(190,370)" name="Pin">
       <a name="width" val="8"/>
       <a name="tristate" val="false"/>
@@ -391,33 +374,44 @@
     <comp lib="0" loc="(150,220)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp loc="(520,370)" name="Sumador 1 bit"/>
     <comp lib="0" loc="(830,380)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-    </comp>
-    <comp loc="(570,400)" name="Sumador 1 bit"/>
-    <comp lib="6" loc="(875,381)" name="Text">
-      <a name="text" val="C_out"/>
-      <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(720,170)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
     </comp>
+    <comp loc="(370,280)" name="Sumador 1 bit"/>
+    <comp loc="(520,370)" name="Sumador 1 bit"/>
+    <comp lib="6" loc="(875,381)" name="Text">
+      <a name="text" val="C_out"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp loc="(420,310)" name="Sumador 1 bit"/>
+    <comp loc="(570,400)" name="Sumador 1 bit"/>
+    <comp lib="0" loc="(680,190)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
     <comp loc="(470,340)" name="Sumador 1 bit"/>
     <comp loc="(320,230)" name="Sumador 1 bit"/>
+    <comp lib="0" loc="(170,580)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+    </comp>
     <comp lib="0" loc="(230,590)" name="Splitter">
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
-  </circuit>
-  <circuit name="Subcircuito final">
-    <a name="circuit" val="Subcircuito final"/>
-    <a name="clabel" val=""/>
-    <a name="clabelup" val="east"/>
-    <a name="clabelfont" val="Dialog plain 12"/>
+    <comp loc="(630,430)" name="Sumador 1 bit"/>
+    <comp lib="0" loc="(220,380)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp loc="(680,490)" name="Sumador 1 bit"/>
   </circuit>
   <circuit name="Restador 1 bit">
     <a name="circuit" val="Restador 1 bit"/>
@@ -477,7 +471,10 @@
     <wire from="(360,170)" to="(370,170)"/>
     <wire from="(360,210)" to="(370,210)"/>
     <wire from="(180,110)" to="(310,110)"/>
-    <comp lib="0" loc="(390,70)" name="Power"/>
+    <comp lib="6" loc="(557,285)" name="Text">
+      <a name="text" val="C_out"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
     <comp lib="6" loc="(163,88)" name="Text">
       <a name="text" val="C_in"/>
       <a name="font" val="Dialog plain 12"/>
@@ -485,49 +482,46 @@
     <comp lib="1" loc="(530,180)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(430,190)" name="XOR Gate">
+    <comp lib="1" loc="(280,210)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(390,340)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(80,320)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="1" loc="(170,240)" name="NOT Gate"/>
+    <comp lib="0" loc="(180,110)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="1" loc="(510,310)" name="OR Gate">
       <a name="inputs" val="2"/>
     </comp>
     <comp lib="1" loc="(420,270)" name="AND Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(170,240)" name="NOT Gate"/>
-    <comp lib="1" loc="(510,310)" name="OR Gate">
-      <a name="inputs" val="2"/>
+    <comp lib="0" loc="(560,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(550,310)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(560,180)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="1" loc="(280,210)" name="XOR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(80,200)" name="Pin">
-      <a name="tristate" val="false"/>
+    <comp lib="6" loc="(565,148)" name="Text">
+      <a name="text" val="A-B"/>
+      <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="6" loc="(67,297)" name="Text">
       <a name="text" val="B"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(80,320)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="6" loc="(557,285)" name="Text">
-      <a name="text" val="C_out"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(390,340)" name="AND Gate">
+    <comp lib="0" loc="(390,70)" name="Power"/>
+    <comp lib="1" loc="(430,190)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="6" loc="(565,148)" name="Text">
-      <a name="text" val="A-B"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(180,110)" name="Pin">
+    <comp lib="0" loc="(80,200)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
     <comp lib="6" loc="(66,178)" name="Text">
@@ -545,19 +539,19 @@
     <wire from="(160,210)" to="(260,210)"/>
     <wire from="(160,230)" to="(260,230)"/>
     <wire from="(300,220)" to="(370,220)"/>
-    <comp lib="3" loc="(300,220)" name="Adder"/>
     <comp lib="0" loc="(160,180)" name="Pin">
       <a name="width" val="8"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="0" loc="(160,260)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
-    </comp>
+    <comp lib="3" loc="(300,220)" name="Adder"/>
     <comp lib="0" loc="(370,220)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(160,260)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
     </comp>
   </circuit>
   <circuit name="Restador 8 bits">
@@ -659,64 +653,64 @@
     <wire from="(130,80)" to="(130,140)"/>
     <wire from="(450,130)" to="(450,250)"/>
     <wire from="(590,120)" to="(600,120)"/>
-    <comp loc="(260,120)" name="Restador 1 bit"/>
-    <comp lib="0" loc="(110,130)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp loc="(490,300)" name="Restador 1 bit"/>
-    <comp lib="0" loc="(110,290)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="tristate" val="false"/>
-    </comp>
     <comp loc="(310,150)" name="Restador 1 bit"/>
-    <comp loc="(360,180)" name="Restador 1 bit"/>
-    <comp lib="6" loc="(52,271)" name="Text">
-      <a name="text" val="B"/>
+    <comp lib="6" loc="(74,105)" name="Text">
+      <a name="text" val="A"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp loc="(220,70)" name="Restador 1 bit"/>
+    <comp loc="(360,180)" name="Restador 1 bit"/>
     <comp lib="0" loc="(550,50)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
     </comp>
-    <comp lib="6" loc="(65,44)" name="Text">
-      <a name="text" val="C_in"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="6" loc="(645,121)" name="Text">
-      <a name="text" val="C_out"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="6" loc="(74,105)" name="Text">
-      <a name="text" val="A"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp loc="(410,210)" name="Restador 1 bit"/>
-    <comp lib="0" loc="(600,120)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(80,70)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(110,130)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="right"/>
-    </comp>
     <comp loc="(450,250)" name="Restador 1 bit"/>
-    <comp lib="0" loc="(510,70)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="right"/>
+    <comp lib="0" loc="(110,290)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
     </comp>
     <comp lib="0" loc="(110,290)" name="Splitter">
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
       <a name="appear" val="right"/>
     </comp>
+    <comp loc="(490,300)" name="Restador 1 bit"/>
+    <comp lib="6" loc="(645,121)" name="Text">
+      <a name="text" val="C_out"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(510,70)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
     <comp loc="(550,330)" name="Restador 1 bit"/>
+    <comp loc="(410,210)" name="Restador 1 bit"/>
+    <comp lib="0" loc="(600,120)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp loc="(260,120)" name="Restador 1 bit"/>
+    <comp lib="6" loc="(52,271)" name="Text">
+      <a name="text" val="B"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(65,44)" name="Text">
+      <a name="text" val="C_in"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(110,130)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(80,70)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(110,130)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+    </comp>
   </circuit>
 </project>
